@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NI IDEA"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "46013325-f7a8-418f-a4c7-54b0c1f061b1"
+  }
+}

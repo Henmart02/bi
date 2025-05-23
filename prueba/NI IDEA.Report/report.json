@@ -1,0 +1,160 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "70913033eb2e1d5611b5",
+      "config": "{}",
+      "name": "af70520c9126598c6be5"
+    }
+  ],
+  "publicCustomVisuals": [
+    "sankey02300D1BE6F5427989F3DE31CCA9E0F32020"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "70913033eb2e1d5611b5",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"263321e44d376c3c3e63\",\"layouts\":[{\"id\":0,\"position\":{\"x\":407.20324814903273,\"y\":0,\"z\":12000,\"width\":464.6763792691665,\"height\":57.47313112013375,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Call Center Performance Report\",\"textStyle\":{\"fontSize\":\"24pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 57.47,
+          "width": 464.68,
+          "x": 407.20,
+          "y": 0.00,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"496951e69cc884e09188\",\"layouts\":[{\"id\":0,\"position\":{\"x\":91.78450027535655,\"y\":199.12569551263792,\"z\":5000,\"width\":410.6967469948157,\"height\":236.46176342125753,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Call Center Telecomunication Data.MonthName\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Call Center Telecomunication Data.Call Id)\"}],\"Series\":[{\"queryRef\":\"Call Center Telecomunication Data.Answered (Y/N)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"MonthName\"},\"Name\":\"Call Center Telecomunication Data.MonthName\",\"NativeReferenceName\":\"MonthName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Answered (Y/N)\"},\"Name\":\"Call Center Telecomunication Data.Answered (Y/N)\",\"NativeReferenceName\":\"Answered (Y/N)\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Call Id\"}},\"Function\":5},\"Name\":\"CountNonNull(Call Center Telecomunication Data.Call Id)\",\"NativeReferenceName\":\"Call Id\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Call Id\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 236.46,
+          "width": 410.70,
+          "x": 91.78,
+          "y": 199.13,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"5fb43383246c10741e6b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":343.8029586585389,\"y\":87.1174917867791,\"z\":11000,\"width\":147.78860213828597,\"height\":104.22985624489641,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Total Calls\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"},\"Name\":\"Call Center Telecomunication Data.Total Calls\",\"NativeReferenceName\":\"Total Calls\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 147.79,
+          "x": 343.80,
+          "y": 87.12,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"674b7f9040930689e70d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":124.87177339653931,\"y\":454.20392301378587,\"z\":10000,\"width\":547.5146987386723,\"height\":266.21015427394093,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"Analyze\":[{\"queryRef\":\"Call Center Telecomunication Data.Total Calls\"}],\"ExplainBy\":[{\"queryRef\":\"Call Center Telecomunication Data.Answered (Y/N)\",\"active\":true},{\"queryRef\":\"Call Center Telecomunication Data.Resolved\",\"active\":true},{\"queryRef\":\"Call Center Telecomunication Data.SatGroup\",\"active\":true}],\"Tooltips\":[{\"queryRef\":\"Sum(Call Center Telecomunication Data.Satisfaction rating)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"},\"Name\":\"Call Center Telecomunication Data.Total Calls\",\"NativeReferenceName\":\"Total Calls\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Resolved\"},\"Name\":\"Call Center Telecomunication Data.Resolved\",\"NativeReferenceName\":\"Resolved\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Answered (Y/N)\"},\"Name\":\"Call Center Telecomunication Data.Answered (Y/N)\",\"NativeReferenceName\":\"Answered (Y/N)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"SatGroup\"},\"Name\":\"Call Center Telecomunication Data.SatGroup\",\"NativeReferenceName\":\"SatGroup1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Satisfaction rating\"}},\"Function\":0},\"Name\":\"Sum(Call Center Telecomunication Data.Satisfaction rating)\",\"NativeReferenceName\":\"Suma de Satisfaction rating\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"}}}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"Call Center Telecomunication Data.Answered (Y/N)\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Call Center Telecomunication Data\"}},\"Property\":\"Answered (Y/N)\"}}],\"isPinned\":true},{\"queryRefs\":[\"Call Center Telecomunication Data.Resolved\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Call Center Telecomunication Data\"}},\"Property\":\"Resolved\"}}],\"isPinned\":true},{\"queryRefs\":[\"Call Center Telecomunication Data.SatGroup\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Y'\"}}],\"isToggled\":true,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Y'\"}}],\"isToggled\":true}]}]}}],\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"tree\":[{\"properties\":{\"effectiveBarsPerLevel\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}}}}],\"insights\":[{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Call Center Telecomunication Data\"}},\"Property\":\"Answered (Y/N)\"}},\"Right\":{\"Literal\":{\"Value\":\"'Y'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Call Center Telecomunication Data\"}},\"Property\":\"Resolved\"}},\"Right\":{\"Literal\":{\"Value\":\"'Y'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Call Center Telecomunication Data\"}},\"Property\":\"SatGroup\"}},\"Right\":{\"Literal\":{\"Value\":\"'Satisfied'\"}}}}}]}}]}}}",
+          "filters": "[]",
+          "height": 266.21,
+          "width": 547.51,
+          "x": 124.87,
+          "y": 454.20,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"869ad6d675a1b0c519ce\",\"layouts\":[{\"id\":0,\"position\":{\"x\":502.23152816630096,\"y\":190.73820331998863,\"z\":6000,\"width\":415.78183889177376,\"height\":212.6936799611384,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Topic\"},{\"queryRef\":\"Call Center Telecomunication Data.Total Calls\"},{\"queryRef\":\"Call Center Telecomunication Data.% Resolved\"},{\"queryRef\":\"Call Center Telecomunication Data.% Unresolved\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Topic\"},\"Name\":\"Call Center Telecomunication Data.Topic\",\"NativeReferenceName\":\"Topic\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"},\"Name\":\"Call Center Telecomunication Data.Total Calls\",\"NativeReferenceName\":\"Total Calls\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"% Resolved\"},\"Name\":\"Call Center Telecomunication Data.% Resolved\",\"NativeReferenceName\":\"% Resolved\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"% Unresolved\"},\"Name\":\"Call Center Telecomunication Data.% Unresolved\",\"NativeReferenceName\":\"% Unresolved\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Calls\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"gridHorizontalWeight\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 212.69,
+          "width": 415.78,
+          "x": 502.23,
+          "y": 190.74,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"9089ef00e099760b6847\",\"layouts\":[{\"id\":0,\"position\":{\"x\":918.0133670580748,\"y\":225.04363557178513,\"z\":9000,\"width\":362.2653645789712,\"height\":229.1602874420007,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Call Center Telecomunication Data.Agent\",\"active\":true}],\"Y\":[{\"queryRef\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Agent\"},\"Name\":\"Call Center Telecomunication Data.Agent\",\"NativeReferenceName\":\"Agent\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Avg Speed Ans (sec)\"},\"Name\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\",\"NativeReferenceName\":\"Avg Speed Ans (sec)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Avg Speed Ans (sec)\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 229.16,
+          "width": 362.27,
+          "x": 918.01,
+          "y": 225.04,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"9930286a5d2d2300e0a0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":987.8501300822272,\"y\":87.1174917867791,\"z\":3000,\"width\":144.677263145901,\"height\":104.22985624489641,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.AHA (min)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"AHA (min)\"},\"Name\":\"Call Center Telecomunication Data.AHA (min)\",\"NativeReferenceName\":\"AHA (min)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"AHA (min)\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 144.68,
+          "x": 987.85,
+          "y": 87.12,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"a57399d78d6dd70665d0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":491.59156079682487,\"y\":87.1174917867791,\"z\":0,\"width\":183.5690005507131,\"height\":104.22985624489641,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Total Answered Calls\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Answered Calls\"},\"Name\":\"Call Center Telecomunication Data.Total Answered Calls\",\"NativeReferenceName\":\"Total Answered Calls\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Answered Calls\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 183.57,
+          "x": 491.59,
+          "y": 87.12,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"a62cafd397640dca7e96\",\"layouts\":[{\"id\":0,\"position\":{\"x\":802.7254600353217,\"y\":87.1174917867791,\"z\":2000,\"width\":185.12467004690558,\"height\":104.22985624489641,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Avg Speed Ans (sec)\"},\"Name\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\",\"NativeReferenceName\":\"Avg Speed Ans (sec)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Avg Speed Ans (sec)\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 185.12,
+          "x": 802.73,
+          "y": 87.12,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"abe0e4acdd2b368a1a99\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1132.5273932281282,\"y\":88.67316128297158,\"z\":4000,\"width\":147.78860213828597,\"height\":104.22985624489641,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.CSAT\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CSAT\"},\"Name\":\"Call Center Telecomunication Data.CSAT\",\"NativeReferenceName\":\"CSAT\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CSAT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 147.79,
+          "x": 1132.53,
+          "y": 88.67,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ba002f3800d61cac0bbb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1118.526367762396,\"y\":0,\"z\":8000,\"width\":161.7896276040183,\"height\":87.1174917867791,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Call Center Telecomunication Data.CSAT\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CSAT\"},\"Name\":\"Call Center Telecomunication Data.CSAT\",\"NativeReferenceName\":\"CSAT\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CSAT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{}}}",
+          "filters": "[]",
+          "height": 87.12,
+          "width": 161.79,
+          "x": 1118.53,
+          "y": 0.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"bfd002282bae4c0b041d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":672.049222355153,\"y\":482.25754381967,\"z\":7000,\"width\":592.7100780493363,\"height\":225.57207694791015,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Agent\"},{\"queryRef\":\"Call Center Telecomunication Data.Total Answered Calls\"},{\"queryRef\":\"Call Center Telecomunication Data.Total Unanswered\"},{\"queryRef\":\"Call Center Telecomunication Data.Resolved Calls\"},{\"queryRef\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\"},{\"queryRef\":\"Call Center Telecomunication Data.CSAT\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Agent\"},\"Name\":\"Call Center Telecomunication Data.Agent\",\"NativeReferenceName\":\"Agent\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Answered Calls\"},\"Name\":\"Call Center Telecomunication Data.Total Answered Calls\",\"NativeReferenceName\":\"Total Answered Calls\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Unanswered\"},\"Name\":\"Call Center Telecomunication Data.Total Unanswered\",\"NativeReferenceName\":\"Total Unanswered\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Resolved Calls\"},\"Name\":\"Call Center Telecomunication Data.Resolved Calls\",\"NativeReferenceName\":\"Resolved Calls1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Avg Speed Ans (sec)\"},\"Name\":\"Call Center Telecomunication Data.Avg Speed Ans (sec)\",\"NativeReferenceName\":\"Avg Speed Ans (sec)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CSAT\"},\"Name\":\"Call Center Telecomunication Data.CSAT\",\"NativeReferenceName\":\"CSAT\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Answered Calls\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 225.57,
+          "width": 592.71,
+          "x": 672.05,
+          "y": 482.26,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"fbefc747b9e84948cac5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":675.160561347538,\"y\":87.1174917867791,\"z\":1000,\"width\":127.56489868778367,\"height\":104.22985624489641,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Call Center Telecomunication Data.Total Agents\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Call Center Telecomunication Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Agents\"},\"Name\":\"Call Center Telecomunication Data.Total Agents\",\"NativeReferenceName\":\"Total Agents\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Total Agents\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 104.23,
+          "width": 127.56,
+          "x": 675.16,
+          "y": 87.12,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

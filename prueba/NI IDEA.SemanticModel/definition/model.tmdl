@@ -1,0 +1,22 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-SV
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Call Center Telecomunication Data"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Call Center Telecomunication Data'
+ref table DateTableTemplate_290a02f3-db30-413c-90ed-2525934d7b99
+ref table LocalDateTable_1e8be627-7de0-4817-ab52-e3ef8c723f39
+
+ref cultureInfo es-ES
+

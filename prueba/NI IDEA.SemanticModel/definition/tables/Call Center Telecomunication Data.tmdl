@@ -1,0 +1,269 @@
+table 'Call Center Telecomunication Data'
+	lineageTag: bd018685-2d8c-41c3-abea-8419106e0aa7
+
+	measure 'Total Answered Calls' = ```
+			
+			CALCULATE (
+			    [Total Calls],
+			    'Call Center Telecomunication Data'[Answered (Y/N)] = "Y"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 680a5c76-fa29-4b14-8c54-972b414ff322
+
+	measure 'Total Unanswered' = ```
+			
+			[Total Calls] - [Total Answered Calls]
+			
+			```
+		formatString: 0
+		lineageTag: af1ae440-566c-4691-80b0-952794d5f15a
+
+	measure 'Total Agents' = ```
+			
+			DISTINCTCOUNT ( 'Call Center Telecomunication Data'[Agent] )
+			
+			```
+		formatString: 0
+		lineageTag: 4ed5358c-a6da-4ca8-bf81-5724fe4bbe50
+
+	measure 'Avg Speed Ans (sec)' = ```
+			
+			AVERAGE ( 'Call Center Telecomunication Data'[Speed of answer in seconds] )
+			
+			```
+		lineageTag: 42628e53-563b-4e27-8416-d872efc206ed
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CSAT = ```
+			
+			AVERAGE ( 'Call Center Telecomunication Data'[Satisfaction rating] )
+			
+			```
+		lineageTag: b0d80fad-dba8-483a-9819-df9ec5c2e5d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Calls' = ```
+			
+			COUNTROWS ( 'Call Center Telecomunication Data' )
+			
+			```
+		formatString: 0
+		lineageTag: 1897f8b9-4b6d-477c-bfdc-04497f1fc5ea
+
+	measure 'Resolved Calls' =
+			
+			CALCULATE(
+			  [Total Calls],
+			  'Call Center Telecomunication Data'[Resolved] = "Y"
+			)
+		formatString: 0
+		lineageTag: fe885bba-f0eb-406a-b7c9-a5d1311d3ca9
+
+	measure '% Resolved' = ```
+			
+			DIVIDE ([Resolved Calls], [Total Calls])
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: bb9d857b-88a4-4542-912e-cd457587bb32
+
+	measure '% Unresolved' =
+			
+			1 - [% Resolved]
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 22db12b0-9754-4e73-90e4-855327b3f57f
+
+	measure 'AHA (min)' = ```
+			
+			AVERAGEX(
+			  FILTER(
+			    'Call Center Telecomunication Data',
+			    'Call Center Telecomunication Data'[Answered (Y/N)] = "Y"
+			  ),
+			  HOUR( 'Call Center Telecomunication Data'[AvgTalkDuration] ) * 60
+			  + MINUTE( 'Call Center Telecomunication Data'[AvgTalkDuration] )
+			  + SECOND( 'Call Center Telecomunication Data'[AvgTalkDuration] ) / 60
+			)
+			
+			
+			
+			```
+		lineageTag: 2582b2b6-e628-4cc5-9958-2da7e826c7f6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Call Id'
+		dataType: string
+		lineageTag: f5e1f7f1-f082-4c7a-91d8-ad274bd7ee4a
+		summarizeBy: none
+		sourceColumn: Call Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agent
+		dataType: string
+		lineageTag: c7eac9e1-fb00-4b91-8099-fef0ef38fb77
+		summarizeBy: none
+		sourceColumn: Agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1ffedb73-1de3-4b1f-b431-2d645452d1d3
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variación
+			isDefault
+			relationship: f94b86ef-c94e-458b-bea6-a73795e40614
+			defaultHierarchy: LocalDateTable_1e8be627-7de0-4817-ab52-e3ef8c723f39.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 402c7751-5743-4e22-918b-ee4e9997201b
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Topic
+		dataType: string
+		lineageTag: 856e9699-dea0-46a9-b622-3062a6e066c5
+		summarizeBy: none
+		sourceColumn: Topic
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Answered (Y/N)'
+		dataType: string
+		lineageTag: d3dd87cb-b47f-4f22-b018-1da6aa8ec8fd
+		summarizeBy: none
+		sourceColumn: Answered (Y/N)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resolved
+		dataType: string
+		lineageTag: 7f30657f-1c37-46bf-9f02-163fc3a207d8
+		summarizeBy: none
+		sourceColumn: Resolved
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Speed of answer in seconds'
+		dataType: int64
+		formatString: 0
+		lineageTag: 24422253-105d-4f65-bed8-36349c44a8f0
+		summarizeBy: sum
+		sourceColumn: Speed of answer in seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvgTalkDuration
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 186d082d-e700-43ce-9dce-29c35a6a7856
+		summarizeBy: none
+		sourceColumn: AvgTalkDuration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Satisfaction rating'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5add090e-97b9-4687-83e2-10179dbb84d8
+		summarizeBy: sum
+		sourceColumn: Satisfaction rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvgTalkDurationMin
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 0bbe74ca-fe95-4c2c-9df8-7813e70c1671
+		summarizeBy: none
+		sourceColumn: AvgTalkDurationMin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column MonthName = ```
+			
+			FORMAT ( 'Call Center Telecomunication Data'[Date], "MMMM" )
+			
+			```
+		lineageTag: 53ccc333-106d-4b5f-aea8-4fb538236c75
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthOrder = ```
+			
+			MONTH ( 'Call Center Telecomunication Data'[Date] )
+			
+			```
+		formatString: 0
+		lineageTag: e4f96520-171c-42e9-9d66-62181e1ee0c6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column SatGroup = ```
+			
+			IF(
+			  'Call Center Telecomunication Data'[Satisfaction rating] >= 3,
+			  "Satisfied",
+			  "Not Satisfied"
+			)
+			
+			```
+		lineageTag: 540b49b5-c821-460d-8b30-c94a89e10679
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Call Center Telecomunication Data' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\HENMA\Downloads\Call Center Telecomunication Data(1).csv"),[Delimiter=";", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Call Id", type text}, {"Agent", type text}, {"Date", type date}, {"Time", type time}, {"Topic", type text}, {"Answered (Y/N)", type text}, {"Resolved", type text}, {"Speed of answer in seconds", Int64.Type}, {"AvgTalkDuration", type time}, {"Satisfaction rating", Int64.Type}}),
+				    #"Columna duplicada" = Table.DuplicateColumn(#"Tipo cambiado", "AvgTalkDuration", "AvgTalkDuration - Copia"),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna duplicada",{{"AvgTalkDuration - Copia", "AvgTalkDurationMin"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"AvgTalkDurationMin", type duration}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"AvgTalkDurationMin"}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas quitadas",{{"AvgTalkDuration", type time}}),
+				    #"Columna duplicada1" = Table.DuplicateColumn(#"Tipo cambiado2", "AvgTalkDuration", "AvgTalkDuration - Copia"),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columna duplicada1",{{"AvgTalkDuration - Copia", "AvgTalkDurationMin"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado1", "AvgTalkDurationMin.1", each Duration.TotalMinutes([AvgTalkDuration])),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Personalizada agregada",{"AvgTalkDurationMin.1"}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas quitadas1", "TalkMinutes", each Duration.TotalMinutes([AvgTalkDuration])),
+				    #"Columnas quitadas2" = Table.RemoveColumns(#"Personalizada agregada1",{"TalkMinutes"}),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Columnas quitadas2", "TalkMinutes", each Duration.TotalMinutes([AvgTalkDuration])),
+				    #"Columnas quitadas3" = Table.RemoveColumns(#"Personalizada agregada2",{"TalkMinutes"})
+				in
+				    #"Columnas quitadas3"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

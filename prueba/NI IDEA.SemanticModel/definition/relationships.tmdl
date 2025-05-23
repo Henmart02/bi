@@ -1,0 +1,5 @@
+relationship f94b86ef-c94e-458b-bea6-a73795e40614
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Call Center Telecomunication Data'.Date
+	toColumn: LocalDateTable_1e8be627-7de0-4817-ab52-e3ef8c723f39.Date
+

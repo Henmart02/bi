@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "NI IDEA"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3a8e1f0e-6ee3-47f8-b080-a2194e5df00f"
+  }
+}
